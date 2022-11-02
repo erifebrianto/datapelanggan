@@ -33,6 +33,8 @@ class Dashboard extends CI_Controller {
 		if ($this->routerosapi->connect($this->config->item('hostname_mikrotik'),$this->config->item('username_mikrotik'),$this->config->item('password_mikrotik'),$this->config->item('port_mikrotik'))) {
 			$this->routerosapi->write('/tool/user-manager/user/print');
 			$totakun = $this->routerosapi->read();
+			$this->routerosapi->write('/ppp/active/print');
+			$useractive = $this->routerosapi->read();
 			$this->routerosapi->write('/system/resource/print');
 			$resource = $this->routerosapi->read();
 			$this->routerosapi->disconnect();
@@ -41,13 +43,14 @@ class Dashboard extends CI_Controller {
 			$data = [
 								'total_akun' => count($totakun),
 								'uptime'=> $resource['0']['uptime'],
+								'useractive' => count($useractive),
 								'total_pelanggan' => $this->M_db->countData('pelanggan'),
 								'pelanggan_suspend' => $this->M_db->countDataStatus('1'),
 								'pelanggan_aktif' => $this->M_db->countDataStatus('0'),
 							];
-			$this->load->view('home/template/header.php');
+			$this->load->view('home/template3/header.php');
 			$this->load->view('dasboard', $data);
-			$this->load->view('home/template/footer.php');
+			$this->load->view('home/template3/footer.php');
 		} else {
 			echo '<script> alert("koneksi mikrotik gagal")</script>';
 		}

@@ -12,18 +12,18 @@ class Produk extends CI_Controller {
 		public function index()
 		{
 			$data['data_pelanggan'] = $this->M_produk->getTable();
-      $this->load->view('home/template/header.php');
+      $this->load->view('home/template3/header.php');
       $this->load->view("v_produk", $data);
-      $this->load->view('home/template/footer.php');
+      $this->load->view('home/template3/footer.php');
 
 		}
     public function input()
 		{
 			$this->load->model('M_kproduk');
 			$data['kategori_produk'] = $this->M_kproduk->getAll();
-      $this->load->view('home/template/header.php');
+      $this->load->view('home/template3/header.php');
 			$this->load->view('v_input_produk', $data);
-      $this->load->view('home/template/footer.php');
+      $this->load->view('home/template3/footer.php');
 		}
     public function simpanData()
 		{

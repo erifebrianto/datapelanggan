@@ -14,12 +14,12 @@ class Dataakun extends CI_Controller {
 	{
 		if (!$this->routerosapi->connect($this->config->item('hostname_mikrotik'),$this->config->item('username_mikrotik'),$this->config->item('password_mikrotik'),$this->config->item('port_mikrotik'))) {
 			echo '<script> alert("koneksi mikrotik gagal")</script>';
-			$this->load->view('home/template/header.php');
-			$this->load->view('home/template/footer.php');
+			$this->load->view('home/template3/header.php');
+			$this->load->view('home/template3/footer.php');
 		} else {
-			$this->load->view('home/template/header.php');
+			$this->load->view('home/template3/header.php');
 			$this->load->view('dataakun');
-			$this->load->view('home/template/footer.php');
+			$this->load->view('home/template3/footer.php');
 		};
 		// $API = new ApiMik();
 		// $this->ApiMik->connect()
@@ -34,8 +34,8 @@ class Dataakun extends CI_Controller {
 	}
 
 	public function add_user(){
-		$this->load->view('home/template/header.php');
+		$this->load->view('home/template3/header.php');
 		$this->load->view('add_user');
-		$this->load->view('home/template/footer.php');
+		$this->load->view('home/template3/footer.php');
 	}
 }

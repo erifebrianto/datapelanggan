@@ -31,8 +31,8 @@ class Datalayanan extends CI_Controller {
 		// $data['layanan'] = $this->M_layanan->join('akun_layanan_pelanggan','pelanggan','akun_layanan_pelanggan.id_pelanggan = pelanggan.id')->result();
 		// $data['layanan'] = $this->M_layanan->join('status_langganan','pelanggan','status_langganan.id_akun_layanan = pelanggan.id')->result();
 		$data['layanan'] = $this->M_layanan->join3table()->result();
-		$this->load->view('home/template/header.php');
+		$this->load->view('home/template3/header.php');
 		$this->load->view('v_layanan', $data);
-		$this->load->view('home/template/footer.php');
+		$this->load->view('home/template3/footer.php');
 	}
 }

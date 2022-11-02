@@ -31,9 +31,9 @@ class Datapembayaran extends CI_Controller {
 	{
 		// $data['layanan'] = $this->M_layanan->join('akun_layanan_pelanggan','pelanggan','akun_layanan_pelanggan.id_pelanggan = pelanggan.id')->result();
 		// $data['layanan'] = $this->M_layanan->join('status_langganan','pelanggan','status_langganan.id_akun_layanan = pelanggan.id')->result();
-		$this->load->view('home/template/header.php');
+		$this->load->view('home/template3/header.php');
 		$this->load->view('pembayaran');
-		$this->load->view('home/template/footer.php');
+		$this->load->view('home/template3/footer.php');
 	}
 
 	public function detail($id)

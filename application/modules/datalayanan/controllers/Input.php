@@ -15,9 +15,9 @@ class Input extends CI_Controller {
 			$data['pelanggan'] = $this->M_input->getAll();
 			$data['paket_produk'] = $this->M_input->getPaket();
 
-			$this->load->view('home/template/header.php');
+			$this->load->view('home/template3/header.php');
       $this->load->view("v_input", $data);
-      $this->load->view('home/template/footer.php');
+      $this->load->view('home/template3/footer.php');
 		}
 		public function simpanData()
 		{

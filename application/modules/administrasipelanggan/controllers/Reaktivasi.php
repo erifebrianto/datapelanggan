@@ -14,9 +14,9 @@ class Reaktivasi extends CI_Controller {
 		$data['action'] = 'reaktivasi';
 		$data['data_pelanggan'] = $this->M_dapel->join3db('reaktivasi');
 		// $data['data_pelanggan'] = $this->M_dapel->tampil_dapel()->result();
-		$this->load->view('home/template/header.php');
+		$this->load->view('home/template3/header.php');
 		$this->load->view('add', $data);
-		$this->load->view('home/template/footer.php');
+		$this->load->view('home/template3/footer.php');
 	}
 	public function add_action(){
 
@@ -25,9 +25,9 @@ class Reaktivasi extends CI_Controller {
 	public function index()
 	{
 		$data['data_pelanggan'] = $this->M_dapel->tampil_data('0')->result();
-		$this->load->view('home/template/header.php');
+		$this->load->view('home/template3/header.php');
 		$this->load->view('reaktivasi',$data);
-		$this->load->view('home/template/footer.php');
+		$this->load->view('home/template3/footer.php');
 	}
 
 }

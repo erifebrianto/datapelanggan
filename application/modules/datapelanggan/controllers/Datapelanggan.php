@@ -31,14 +31,14 @@ class Datapelanggan extends CI_Controller {
 	{
 		// $data['data_pelanggan'] = $this->M_dapel->join('pelanggan','paket_produk','pelanggan.id_produk = paket_produk.id_produk')->result();
 		$data['data_pelanggan'] = $this->M_dapel->tampil_dapel()->result();
-		$this->load->view('home/template/header.php');
+		$this->load->view('home/template3/header.php');
 		$this->load->view('datapelanggan', $data);
-		$this->load->view('home/template/footer.php');
+		$this->load->view('home/template3/footer.php');
 	}
 	public function input(){
-		$this->load->view('home/template/header.php');
+		$this->load->view('home/template3/header.php');
 		$this->load->view('v_input');
-		$this->load->view('home/template/footer.php');
+		$this->load->view('home/template3/footer.php');
 }
 public function save_data(){
 		$id_data_pelanggan = $this->input->post('id_data_pelanggan');
@@ -63,9 +63,9 @@ public function save_data(){
 	}
 
 	public function imports(){
-      $this->load->view('home/template/header.php');
+      $this->load->view('home/template3/header.php');
   		$this->load->view('import');
-      $this->load->view('home/template/footer.php');
+      $this->load->view('home/template3/footer.php');
   	}
 
 	  public function import(){
@@ -129,9 +129,9 @@ public function save_data(){
 				}else{
 					$data['upload_error'] = $upload['error'];
 				}
-				$this->load->view('home/template/header.php');
+				$this->load->view('home/template3/header.php');
 				$this->load->view('v_import1', $data);
-				$this->load->view('home/template/footer.php');
+				$this->load->view('home/template3/footer.php');
 			}
 	  }
 

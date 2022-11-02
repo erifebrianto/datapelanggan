@@ -12,9 +12,9 @@ class Log extends CI_Controller {
 		public function index()
 		{
 			$data['tabel_log'] = $this->M_log->getAll();
-      $this->load->view('home/template/header.php');
+      $this->load->view('home/template3/header.php');
       $this->load->view("v_log", $data);
-      $this->load->view('home/template/footer.php');
+      $this->load->view('home/template3/footer.php');
 
 		}
 
